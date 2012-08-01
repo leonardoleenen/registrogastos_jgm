@@ -15,16 +15,16 @@
 	<ui:param name="pageTitle" value="Create Pagohaberes"/>
 
 	<ui:define name="header">
-		Pagohaberes
+		Pago de haberes
 	</ui:define>
 
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test="#{!empty pagohaberesBean.id}">
-				Edit existing Pagohaberes
+				Editar Pago de haberes
 			</c:when>
 			<c:otherwise>
-				Create a new Pagohaberes
+				Crear Pago de haberes
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -35,24 +35,15 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="3">
-				<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+			<h:panelGrid columnClasses="label,component,required" columns="6">
+				<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 				<h:panelGroup>
 					<h:inputText id="pagohaberesBeanPagohaberesTiponroprocedimiento" required="true" value="#{pagohaberesBean.pagohaberes.tiponroprocedimiento}"/>
 					<h:message for="pagohaberesBeanPagohaberesTiponroprocedimiento" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
-				<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancaria" value="Entidad Bancaria:"/>
-				<h:panelGrid columnClasses="label,component,required" columns="3" id="pagohaberesBeanPagohaberesEntidadBancaria">
-					<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" value="Descripcion:"/>
-					<h:panelGroup>
-						<h:inputText id="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" required="true" value="#{pagohaberesBean.pagohaberes.entidadBancaria.descripcion}"/>
-						<h:message for="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" styleClass="error"/>
-					</h:panelGroup>
-					<h:outputText value="*"/>
-				</h:panelGrid>
-				<h:outputText value="*"/>
-				<h:outputLabel for="pagohaberesBeanPagohaberesOrdencompra" value="Ordencompra:"/>
+				
+				<h:outputLabel for="pagohaberesBeanPagohaberesOrdencompra" value="Orden de compra:"/>
 				<h:panelGroup>
 					<h:inputText id="pagohaberesBeanPagohaberesOrdencompra" required="true" value="#{pagohaberesBean.pagohaberes.ordencompra}"/>
 					<h:message for="pagohaberesBeanPagohaberesOrdencompra" styleClass="error"/>
@@ -74,25 +65,37 @@
 					<h:message for="pagohaberesBeanPagohaberesFechaFinalizacion" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
-				<h:outputLabel for="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" value="Cantper Cobra Haberes Por Banco:"/>
+				<h:outputLabel for="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" value="Cant. Cobra Haberes Por Banco:"/>
 				<h:panelGroup>
 					<h:inputText id="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" value="#{pagohaberesBean.pagohaberes.cantperCobraHaberesPorBanco}"/>
 					<h:message for="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
+				<!-- 
+				<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancaria" value=""/>
+				<h:panelGrid columnClasses="label,component,required" columns="3" id="pagohaberesBeanPagohaberesEntidadBancaria">
+					<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" value="Descripcion:"/>
+					<h:panelGroup>
+						<h:inputText id="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" required="true" value="#{pagohaberesBean.pagohaberes.entidadBancaria.descripcion}"/>
+						<h:message for="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText value="*"/>
+				</h:panelGrid>
+				 -->
+				
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action="#{pagohaberesBean.update}"/>
+				<h:commandLink value="Guardar" action="#{pagohaberesBean.update}"/>
 				<c:choose>
 					<c:when test="#{!empty pagohaberesBean.id}">
-						<h:link value="Cancel" outcome="view">
+						<h:link value="Cancelar" outcome="view">
 							<f:param name="id" value="#{pagohaberesBean.id}"/>
 						</h:link>
 						<h:commandLink value="Delete" action="#{pagohaberesBean.delete}"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search"/>
+						<h:link value="Cancelar" outcome="search"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

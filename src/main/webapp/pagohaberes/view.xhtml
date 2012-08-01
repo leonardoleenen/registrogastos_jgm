@@ -14,18 +14,18 @@
 	<ui:param name="pageTitle" value="View Pagohaberes"/>
 
 	<ui:define name="header">
-		Pagohaberes
+		Pago de haberes
 	</ui:define>
 
 	<ui:define name="subheader">
-		View existing Pagohaberes
+		Ver Pago de haberes
 	</ui:define>
 
 	<ui:define name="footer"/>
 
 	<ui:define name="main">
-		<h:panelGrid columnClasses="label,component,required" columns="3">
-			<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+		<h:panelGrid columnClasses="label,component,required" columns="6">
+			<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 			<h:outputText id="pagohaberesBeanPagohaberesTiponroprocedimiento" value="#{pagohaberesBean.pagohaberes.tiponroprocedimiento}"/>
 			<h:outputText/>
 			<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancaria" value="Entidad Bancaria:"/>
@@ -35,7 +35,8 @@
 				<h:outputText/>
 			</h:panelGrid>
 			<h:outputText value="*"/>
-			<h:outputLabel for="pagohaberesBeanPagohaberesOrdencompra" value="Ordencompra:"/>
+			
+			<h:outputLabel for="pagohaberesBeanPagohaberesOrdencompra" value="Orden compra:"/>
 			<h:outputText id="pagohaberesBeanPagohaberesOrdencompra" value="#{pagohaberesBean.pagohaberes.ordencompra}"/>
 			<h:outputText/>
 			<h:outputLabel for="pagohaberesBeanPagohaberesFechaInicio" value="Fecha Inicio:"/>
@@ -54,9 +55,9 @@
 		</h:panelGrid>
 
 		<div class="buttons">
-			<h:link value="View All" outcome="search"/> 
-			<h:link value="Edit" outcome="create" includeViewParams="true"/>
-			<h:link value="Create New" outcome="create"/>
+			<h:link value="Ver Todo" outcome="search"/> 
+			<h:link value="Editar" outcome="create" includeViewParams="true"/>
+			<h:link value="Crear" outcome="create"/>
 		</div>
 	</ui:define>
 

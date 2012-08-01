@@ -24,7 +24,7 @@
 	<ui:define name="footer"/>
 
 	<ui:define name="main">
-		<h:panelGrid columnClasses="label,component,required" columns="3">
+		<h:panelGrid columnClasses="label,component,required" columns="6">
 			<h:outputLabel for="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" value="Cant Pasajes Contratados Ultimo Anio:"/>
 			<h:outputText id="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" value="#{pasajeBean.pasaje.cantPasajesContratadosUltimoAnio}"/>
 			<h:outputText/>
@@ -59,9 +59,9 @@
 		</h:panelGrid>
 
 		<div class="buttons">
-			<h:link value="View All" outcome="search"/> 
-			<h:link value="Edit" outcome="create" includeViewParams="true"/>
-			<h:link value="Create New" outcome="create"/>
+			<h:link value="Ver Todo" outcome="search"/> 
+			<h:link value="Editar" outcome="create" includeViewParams="true"/>
+			<h:link value="Crear" outcome="create"/>
 		</div>
 	</ui:define>
 

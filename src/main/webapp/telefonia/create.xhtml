@@ -21,10 +21,10 @@
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test="#{!empty telefoniaBean.id}">
-				Edit existing Telefonia
+				Editar Telefonia
 			</c:when>
 			<c:otherwise>
-				Create a new Telefonia
+				Crear Telefonia
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -35,8 +35,8 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="3">
-				<h:outputLabel for="telefoniaBeanTelefoniaTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+			<h:panelGrid columnClasses="label,component,required" columns="6">
+				<h:outputLabel for="telefoniaBeanTelefoniaTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaTiponroprocedimiento" required="true" value="#{telefoniaBean.telefonia.tiponroprocedimiento}"/>
 					<h:message for="telefoniaBeanTelefoniaTiponroprocedimiento" styleClass="error"/>
@@ -121,16 +121,16 @@
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action="#{telefoniaBean.update}"/>
+				<h:commandLink value="Guardar" action="#{telefoniaBean.update}"/>
 				<c:choose>
 					<c:when test="#{!empty telefoniaBean.id}">
-						<h:link value="Cancel" outcome="view">
+						<h:link value="Cancelar" outcome="view">
 							<f:param name="id" value="#{telefoniaBean.id}"/>
 						</h:link>
 						<h:commandLink value="Delete" action="#{telefoniaBean.delete}"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search"/>
+						<h:link value="Cancelar" outcome="search"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

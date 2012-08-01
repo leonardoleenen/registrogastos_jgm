@@ -21,10 +21,10 @@
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test="#{!empty pasajeBean.id}">
-				Edit existing Pasaje
+				Editar Pasaje
 			</c:when>
 			<c:otherwise>
-				Create a new Pasaje
+				Crear Pasaje
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -35,7 +35,7 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:panelGrid columnClasses="label,component,required" columns="6">
 				<h:outputLabel for="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" value="Cant Pasajes Contratados Ultimo Anio:"/>
 				<h:panelGroup>
 					<h:inputText id="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" required="true" value="#{pasajeBean.pasaje.cantPasajesContratadosUltimoAnio}"/>
@@ -97,16 +97,16 @@
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action="#{pasajeBean.update}"/>
+				<h:commandLink value="Guardar" action="#{pasajeBean.update}"/>
 				<c:choose>
 					<c:when test="#{!empty pasajeBean.id}">
-						<h:link value="Cancel" outcome="view">
+						<h:link value="Cancelar" outcome="view">
 							<f:param name="id" value="#{pasajeBean.id}"/>
 						</h:link>
 						<h:commandLink value="Delete" action="#{pasajeBean.delete}"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search"/>
+						<h:link value="Cancelar" outcome="search"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

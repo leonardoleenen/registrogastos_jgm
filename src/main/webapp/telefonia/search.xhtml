@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Telefonia entities
+		Buscar Telefonia 
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,8 +27,8 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
-					<h:outputLabel for="telefoniaBeanSearchTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+				<h:panelGrid columnClasses="label,component,required" columns="6">
+					<h:outputLabel for="telefoniaBeanSearchTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 					<h:panelGroup>
 						<h:inputText id="telefoniaBeanSearchTiponroprocedimiento" value="#{telefoniaBean.search.tiponroprocedimiento}"/>
 						<h:message for="telefoniaBeanSearchTiponroprocedimiento" styleClass="error"/>
@@ -58,17 +58,20 @@
 						<h:message for="telefoniaBeanSearchNroOrdenCompra" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+					<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{telefoniaBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{telefoniaBean.search}"/>
-					<h:commandLink value="Create New" action="#{telefoniaBean.create}"/>
+				
+					<h:commandLink value="Crear" action="#{telefoniaBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			
 			<h:dataTable id="telefoniaBeanPageItems" styleClass="data-table" value="#{telefoniaBean.pageItems}" var="_item">
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Tiponroprocedimiento"/>
+						<h:outputText value="Tipo nro procedimiento"/>
 					</f:facet>
 					<h:link outcome="/telefonia/view">
 						<f:param name="id" value="#{_item.id}"/>

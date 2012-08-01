@@ -14,11 +14,11 @@
 	<ui:param name="pageTitle" value="Search Pagohaberes entities"/>
 
 	<ui:define name="header">
-		Pagohaberes
+		Pago de haberes
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Pagohaberes entities
+		Buscar Pago de haberes 
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,29 +27,32 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
-					<h:outputLabel for="pagohaberesBeanSearchTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+				<h:panelGrid columnClasses="label,component,required" columns="6">
+					<h:outputLabel for="pagohaberesBeanSearchTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 					<h:panelGroup>
 						<h:inputText id="pagohaberesBeanSearchTiponroprocedimiento" value="#{pagohaberesBean.search.tiponroprocedimiento}"/>
 						<h:message for="pagohaberesBeanSearchTiponroprocedimiento" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
-					<h:outputLabel for="pagohaberesBeanSearchOrdencompra" value="Ordencompra:"/>
+					<h:outputLabel for="pagohaberesBeanSearchOrdencompra" value="Orden de compra:"/>
 					<h:panelGroup>
 						<h:inputText id="pagohaberesBeanSearchOrdencompra" value="#{pagohaberesBean.search.ordencompra}"/>
 						<h:message for="pagohaberesBeanSearchOrdencompra" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
-					<h:outputLabel for="pagohaberesBeanSearchCantperCobraHaberesPorBanco" value="Cantper Cobra Haberes Por Banco:"/>
+					<h:outputLabel for="pagohaberesBeanSearchCantperCobraHaberesPorBanco" value="Cant. Cobra Haberes Por Banco:"/>
 					<h:panelGroup>
 						<h:inputText id="pagohaberesBeanSearchCantperCobraHaberesPorBanco" value="#{pagohaberesBean.search.cantperCobraHaberesPorBanco}"/>
 						<h:message for="pagohaberesBeanSearchCantperCobraHaberesPorBanco" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+						<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{pagohaberesBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{pagohaberesBean.search}"/>
-					<h:commandLink value="Create New" action="#{pagohaberesBean.create}"/>
+				
+					<h:commandLink value="Crear" action="#{pagohaberesBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			

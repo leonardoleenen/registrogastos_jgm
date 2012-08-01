@@ -171,12 +171,19 @@ h2 {
 	text-align: left;
 	vertical-align: top;
 	white-space: nowrap;
+	font-size: 13px;
 }
 
+#content table td{
+	font-size: 12px;
+}
+
+#content table input{width: 97%;}
 #content table .component {
 	
 	text-align: left;
 	vertical-align: top;
+	font-size: 12px;
 }
 
 #content table .component input, #content table .component select {
@@ -218,7 +225,7 @@ h2 {
 	width: 1%;
 	
 	padding-left: 4pt;
-	font-size: 16px;
+	font-size: 12px;
 	
 }
 
@@ -231,6 +238,7 @@ h2 {
 #content .data-table thead th {
 	background-color: #dddddd;
 	border-bottom: 1px solid #cccccc;
+	font-size: 12px;
 }
 
 #content .data-table thead th, #content .data-table tbody td, #content .data-table tfoot td {
@@ -256,6 +264,7 @@ h2 {
 	display: block;
 	color: #5b5b5b;
 	text-decoration: none;
+	font-size: 12px;
 }
 
 #content .remove-column {

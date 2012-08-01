@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Pasaje entities
+		Buscar Pasaje entities
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,7 +27,7 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
+				<h:panelGrid columnClasses="label,component,required" columns="6">
 					<h:outputLabel for="pasajeBeanSearchCantPasajesContratadosUltimoAnio" value="Cant Pasajes Contratados Ultimo Anio:"/>
 					<h:panelGroup>
 						<h:inputText id="pasajeBeanSearchCantPasajesContratadosUltimoAnio" value="#{pasajeBean.search.cantPasajesContratadosUltimoAnio}"/>
@@ -58,10 +58,14 @@
 						<h:message for="pasajeBeanSearchMontoPasaje" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+					
+					<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{pasajeBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{pasajeBean.search}"/>
-					<h:commandLink value="Create New" action="#{pasajeBean.create}"/>
+					
+					<h:commandLink value="Crear" action="#{pasajeBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			
