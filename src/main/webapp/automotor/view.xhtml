@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{automotorBean.id}"/>
+		<f:event type="preRenderView" listener="#{automotorBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Automotor"/>
+
+	<ui:define name="header">
+		Automotor
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Automotor
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="automotorBeanAutomotorTipo" value="Tipo:"/>
+			<h:outputText id="automotorBeanAutomotorTipo" value="#{automotorBean.automotor.tipo}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorMarca" value="Marca:"/>
+			<h:outputText id="automotorBeanAutomotorMarca" value="#{automotorBean.automotor.marca}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorModelo" value="Modelo:"/>
+			<h:outputText id="automotorBeanAutomotorModelo" value="#{automotorBean.automotor.modelo}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorAnio" value="Anio:"/>
+			<h:outputText id="automotorBeanAutomotorAnio" value="#{automotorBean.automotor.anio}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorPatente" value="Patente:"/>
+			<h:outputText id="automotorBeanAutomotorPatente" value="#{automotorBean.automotor.patente}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorTitiular" value="Titiular:"/>
+			<h:outputText id="automotorBeanAutomotorTitiular" value="#{automotorBean.automotor.titiular}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorAgenteUsuario" value="Agente Usuario:"/>
+			<h:outputText id="automotorBeanAutomotorAgenteUsuario" value="#{automotorBean.automotor.agenteUsuario}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorDependenciaDestinado" value="Dependencia Destinado:"/>
+			<h:outputText id="automotorBeanAutomotorDependenciaDestinado" value="#{automotorBean.automotor.dependenciaDestinado}"/>
+			<h:outputText/>
+			<h:outputLabel for="automotorBeanAutomotorUsoDestinado" value="Uso Destinado:"/>
+			<h:outputText id="automotorBeanAutomotorUsoDestinado" value="#{automotorBean.automotor.usoDestinado}"/>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true"/>
+			<h:link value="Create New" outcome="create"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

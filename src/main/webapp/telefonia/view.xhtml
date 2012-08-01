@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{telefoniaBean.id}"/>
+		<f:event type="preRenderView" listener="#{telefoniaBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Telefonia"/>
+
+	<ui:define name="header">
+		Telefonia
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Telefonia
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="telefoniaBeanTelefoniaTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+			<h:outputText id="telefoniaBeanTelefoniaTiponroprocedimiento" value="#{telefoniaBean.telefonia.tiponroprocedimiento}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaEmpresaPrestadora" value="Empresa Prestadora:"/>
+			<h:outputText id="telefoniaBeanTelefoniaEmpresaPrestadora" value="#{telefoniaBean.telefonia.empresaPrestadora}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaMontoServicio" value="Monto Servicio:"/>
+			<h:outputText id="telefoniaBeanTelefoniaMontoServicio" value="#{telefoniaBean.telefonia.montoServicio}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaUbicacionGeograficaDependencia" value="Ubicacion Geografica Dependencia:"/>
+			<h:outputText id="telefoniaBeanTelefoniaUbicacionGeograficaDependencia" value="#{telefoniaBean.telefonia.ubicacionGeograficaDependencia}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaNroOrdenCompra" value="Nro Orden Compra:"/>
+			<h:outputText id="telefoniaBeanTelefoniaNroOrdenCompra" value="#{telefoniaBean.telefonia.nroOrdenCompra}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaFechaInicioContrato" value="Fecha Inicio Contrato:"/>
+			<h:outputText id="telefoniaBeanTelefoniaFechaInicioContrato" value="#{telefoniaBean.telefonia.fechaInicioContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaFechaFinalizacionContrato" value="Fecha Finalizacion Contrato:"/>
+			<h:outputText id="telefoniaBeanTelefoniaFechaFinalizacionContrato" value="#{telefoniaBean.telefonia.fechaFinalizacionContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaCantMoviles" value="Cant Moviles:"/>
+			<h:outputText id="telefoniaBeanTelefoniaCantMoviles" value="#{telefoniaBean.telefonia.cantMoviles}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaTipoServicioContrato" value="Tipo Servicio Contrato:"/>
+			<h:outputText id="telefoniaBeanTelefoniaTipoServicioContrato" value="#{telefoniaBean.telefonia.tipoServicioContrato}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaNroLinea" value="Nro Linea:"/>
+			<h:outputText id="telefoniaBeanTelefoniaNroLinea" value="#{telefoniaBean.telefonia.nroLinea}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaTitular" value="Titular:"/>
+			<h:outputText id="telefoniaBeanTelefoniaTitular" value="#{telefoniaBean.telefonia.titular}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaDependencia" value="Dependencia:"/>
+			<h:outputText id="telefoniaBeanTelefoniaDependencia" value="#{telefoniaBean.telefonia.dependencia}"/>
+			<h:outputText/>
+			<h:outputLabel for="telefoniaBeanTelefoniaMontoUltimaFacturacion" value="Monto Ultima Facturacion:"/>
+			<h:outputText id="telefoniaBeanTelefoniaMontoUltimaFacturacion" value="#{telefoniaBean.telefonia.montoUltimaFacturacion}"/>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true"/>
+			<h:link value="Create New" outcome="create"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

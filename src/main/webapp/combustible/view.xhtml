@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{combustibleBean.id}"/>
+		<f:event type="preRenderView" listener="#{combustibleBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Combustible"/>
+
+	<ui:define name="header">
+		Combustible
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Combustible
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="combustibleBeanCombustibleTipoNroProcedimiento" value="Tipo Nro Procedimiento:"/>
+			<h:outputText id="combustibleBeanCombustibleTipoNroProcedimiento" value="#{combustibleBean.combustible.tipoNroProcedimiento}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleRazonSocialProveedor" value="Razon Social Proveedor:"/>
+			<h:outputText id="combustibleBeanCombustibleRazonSocialProveedor" value="#{combustibleBean.combustible.razonSocialProveedor}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleCuitProveedor" value="Cuit Proveedor:"/>
+			<h:outputText id="combustibleBeanCombustibleCuitProveedor" value="#{combustibleBean.combustible.cuitProveedor}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleNroOrdenCompra" value="Nro Orden Compra:"/>
+			<h:outputText id="combustibleBeanCombustibleNroOrdenCompra" value="#{combustibleBean.combustible.nroOrdenCompra}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleFechaInicioContrato" value="Fecha Inicio Contrato:"/>
+			<h:outputText id="combustibleBeanCombustibleFechaInicioContrato" value="#{combustibleBean.combustible.fechaInicioContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleFechaFinalizacionContrato" value="Fecha Finalizacion Contrato:"/>
+			<h:outputText id="combustibleBeanCombustibleFechaFinalizacionContrato" value="#{combustibleBean.combustible.fechaFinalizacionContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleCantLitrosPorMes" value="Cant Litros Por Mes:"/>
+			<h:outputText id="combustibleBeanCombustibleCantLitrosPorMes" value="#{combustibleBean.combustible.cantLitrosPorMes}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="Especificacion Tecnicas Productos Utilizados:"/>
+			<h:outputText id="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="#{combustibleBean.combustible.especificacionTecnicasProductosUtilizados}"/>
+			<h:outputText/>
+			<h:outputLabel for="combustibleBeanCombustibleLugarCargaCombustible" value="Lugar Carga Combustible:"/>
+			<h:outputText id="combustibleBeanCombustibleLugarCargaCombustible" value="#{combustibleBean.combustible.lugarCargaCombustible}"/>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true"/>
+			<h:link value="Create New" outcome="create"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{pagohaberesBean.id}"/>
+		<f:event type="preRenderView" listener="#{pagohaberesBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Pagohaberes"/>
+
+	<ui:define name="header">
+		Pagohaberes
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Pagohaberes
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+			<h:outputText id="pagohaberesBeanPagohaberesTiponroprocedimiento" value="#{pagohaberesBean.pagohaberes.tiponroprocedimiento}"/>
+			<h:outputText/>
+			<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancaria" value="Entidad Bancaria:"/>
+			<h:panelGrid columnClasses="label,component,required" columns="3" id="pagohaberesBeanPagohaberesEntidadBancaria">
+				<h:outputLabel for="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" value="Descripcion:"/>
+				<h:outputText id="pagohaberesBeanPagohaberesEntidadBancariaDescripcion" value="#{pagohaberesBean.pagohaberes.entidadBancaria.descripcion}"/>
+				<h:outputText/>
+			</h:panelGrid>
+			<h:outputText value="*"/>
+			<h:outputLabel for="pagohaberesBeanPagohaberesOrdencompra" value="Ordencompra:"/>
+			<h:outputText id="pagohaberesBeanPagohaberesOrdencompra" value="#{pagohaberesBean.pagohaberes.ordencompra}"/>
+			<h:outputText/>
+			<h:outputLabel for="pagohaberesBeanPagohaberesFechaInicio" value="Fecha Inicio:"/>
+			<h:outputText id="pagohaberesBeanPagohaberesFechaInicio" value="#{pagohaberesBean.pagohaberes.fechaInicio}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="pagohaberesBeanPagohaberesFechaFinalizacion" value="Fecha Finalizacion:"/>
+			<h:outputText id="pagohaberesBeanPagohaberesFechaFinalizacion" value="#{pagohaberesBean.pagohaberes.fechaFinalizacion}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" value="Cantper Cobra Haberes Por Banco:"/>
+			<h:outputText id="pagohaberesBeanPagohaberesCantperCobraHaberesPorBanco" value="#{pagohaberesBean.pagohaberes.cantperCobraHaberesPorBanco}"/>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true"/>
+			<h:link value="Create New" outcome="create"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

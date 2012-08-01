@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{pasajeBean.id}"/>
+		<f:event type="preRenderView" listener="#{pasajeBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="View Pasaje"/>
+
+	<ui:define name="header">
+		Pasaje
+	</ui:define>
+
+	<ui:define name="subheader">
+		View existing Pasaje
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:panelGrid columnClasses="label,component,required" columns="3">
+			<h:outputLabel for="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" value="Cant Pasajes Contratados Ultimo Anio:"/>
+			<h:outputText id="pasajeBeanPasajeCantPasajesContratadosUltimoAnio" value="#{pasajeBean.pasaje.cantPasajesContratadosUltimoAnio}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeDestinoDePasajes" value="Destino De Pasajes:"/>
+			<h:outputText id="pasajeBeanPasajeDestinoDePasajes" value="#{pasajeBean.pasaje.destinoDePasajes}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeEmpresaAerea" value="Empresa Aerea:"/>
+			<h:outputText id="pasajeBeanPasajeEmpresaAerea" value="#{pasajeBean.pasaje.empresaAerea}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeAgenciaTurismo" value="Agencia Turismo:"/>
+			<h:outputText id="pasajeBeanPasajeAgenciaTurismo" value="#{pasajeBean.pasaje.agenciaTurismo}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeMontoPasaje" value="Monto Pasaje:"/>
+			<h:outputText id="pasajeBeanPasajeMontoPasaje" value="#{pasajeBean.pasaje.montoPasaje}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeTipoNroProcedimiento" value="Tipo Nro Procedimiento:"/>
+			<h:outputText id="pasajeBeanPasajeTipoNroProcedimiento" value="#{pasajeBean.pasaje.tipoNroProcedimiento}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeNroOrdenCompra" value="Nro Orden Compra:"/>
+			<h:outputText id="pasajeBeanPasajeNroOrdenCompra" value="#{pasajeBean.pasaje.nroOrdenCompra}"/>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeFechaInicioContrato" value="Fecha Inicio Contrato:"/>
+			<h:outputText id="pasajeBeanPasajeFechaInicioContrato" value="#{pasajeBean.pasaje.fechaInicioContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+			<h:outputLabel for="pasajeBeanPasajeFechaFinalizacionContrato" value="Fecha Finalizacion Contrato:"/>
+			<h:outputText id="pasajeBeanPasajeFechaFinalizacionContrato" value="#{pasajeBean.pasaje.fechaFinalizacionContrato}">
+				<f:convertDateTime type="date"/>
+			</h:outputText>
+			<h:outputText/>
+		</h:panelGrid>
+
+		<div class="buttons">
+			<h:link value="View All" outcome="search"/> 
+			<h:link value="Edit" outcome="create" includeViewParams="true"/>
+			<h:link value="Create New" outcome="create"/>
+		</div>
+	</ui:define>
+
+</ui:composition>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value="#{telefoniaBean.page}"/>
+		<f:event type="preRenderView" listener="#{telefoniaBean.paginate}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Telefonia entities"/>
+
+	<ui:define name="header">
+		Telefonia
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Telefonia entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<h:panelGroup styleClass="search">
+
+				<h:panelGrid columnClasses="label,component,required" columns="3">
+					<h:outputLabel for="telefoniaBeanSearchTiponroprocedimiento" value="Tiponroprocedimiento:"/>
+					<h:panelGroup>
+						<h:inputText id="telefoniaBeanSearchTiponroprocedimiento" value="#{telefoniaBean.search.tiponroprocedimiento}"/>
+						<h:message for="telefoniaBeanSearchTiponroprocedimiento" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="telefoniaBeanSearchEmpresaPrestadora" value="Empresa Prestadora:"/>
+					<h:panelGroup>
+						<h:inputText id="telefoniaBeanSearchEmpresaPrestadora" value="#{telefoniaBean.search.empresaPrestadora}"/>
+						<h:message for="telefoniaBeanSearchEmpresaPrestadora" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="telefoniaBeanSearchMontoServicio" value="Monto Servicio:"/>
+					<h:panelGroup>
+						<h:inputText id="telefoniaBeanSearchMontoServicio" value="#{telefoniaBean.search.montoServicio}"/>
+						<h:message for="telefoniaBeanSearchMontoServicio" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="telefoniaBeanSearchUbicacionGeograficaDependencia" value="Ubicacion Geografica Dependencia:"/>
+					<h:panelGroup>
+						<h:inputText id="telefoniaBeanSearchUbicacionGeograficaDependencia" value="#{telefoniaBean.search.ubicacionGeograficaDependencia}"/>
+						<h:message for="telefoniaBeanSearchUbicacionGeograficaDependencia" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="telefoniaBeanSearchNroOrdenCompra" value="Nro Orden Compra:"/>
+					<h:panelGroup>
+						<h:inputText id="telefoniaBeanSearchNroOrdenCompra" value="#{telefoniaBean.search.nroOrdenCompra}"/>
+						<h:message for="telefoniaBeanSearchNroOrdenCompra" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+				</h:panelGrid>
+				<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Search" action="#{telefoniaBean.search}"/>
+					<h:commandLink value="Create New" action="#{telefoniaBean.create}"/>
+				</h:panelGroup>
+			</h:panelGroup>
+			
+			<h:dataTable id="telefoniaBeanPageItems" styleClass="data-table" value="#{telefoniaBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tiponroprocedimiento"/>
+					</f:facet>
+					<h:link outcome="/telefonia/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemTiponroprocedimiento" value="#{_item.tiponroprocedimiento}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Empresa Prestadora"/>
+					</f:facet>
+					<h:link outcome="/telefonia/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemEmpresaPrestadora" value="#{_item.empresaPrestadora}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Monto Servicio"/>
+					</f:facet>
+					<h:link outcome="/telefonia/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemMontoServicio" value="#{_item.montoServicio}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nro Orden Compra"/>
+					</f:facet>
+					<h:link outcome="/telefonia/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemNroOrdenCompra" value="#{_item.nroOrdenCompra}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha Inicio Contrato"/>
+					</f:facet>
+					<h:link outcome="/telefonia/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemFechaInicioContrato" value="#{_item.fechaInicioContrato}">
+							<f:convertDateTime type="date"/>
+						</h:outputText>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value="#{telefoniaBean}"/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>

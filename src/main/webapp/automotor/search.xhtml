@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value="#{automotorBean.page}"/>
+		<f:event type="preRenderView" listener="#{automotorBean.paginate}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Automotor entities"/>
+
+	<ui:define name="header">
+		Automotor
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Automotor entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<h:panelGroup styleClass="search">
+
+				<h:panelGrid columnClasses="label,component,required" columns="3">
+					<h:outputLabel for="automotorBeanSearchTipo" value="Tipo:"/>
+					<h:panelGroup>
+						<h:inputText id="automotorBeanSearchTipo" value="#{automotorBean.search.tipo}"/>
+						<h:message for="automotorBeanSearchTipo" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="automotorBeanSearchMarca" value="Marca:"/>
+					<h:panelGroup>
+						<h:inputText id="automotorBeanSearchMarca" value="#{automotorBean.search.marca}"/>
+						<h:message for="automotorBeanSearchMarca" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="automotorBeanSearchModelo" value="Modelo:"/>
+					<h:panelGroup>
+						<h:inputText id="automotorBeanSearchModelo" value="#{automotorBean.search.modelo}"/>
+						<h:message for="automotorBeanSearchModelo" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="automotorBeanSearchAnio" value="Anio:"/>
+					<h:panelGroup>
+						<h:inputText id="automotorBeanSearchAnio" value="#{automotorBean.search.anio}"/>
+						<h:message for="automotorBeanSearchAnio" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="automotorBeanSearchPatente" value="Patente:"/>
+					<h:panelGroup>
+						<h:inputText id="automotorBeanSearchPatente" value="#{automotorBean.search.patente}"/>
+						<h:message for="automotorBeanSearchPatente" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+				</h:panelGrid>
+				<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Search" action="#{automotorBean.search}"/>
+					<h:commandLink value="Create New" action="#{automotorBean.create}"/>
+				</h:panelGroup>
+			</h:panelGroup>
+			
+			<h:dataTable id="automotorBeanPageItems" styleClass="data-table" value="#{automotorBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo"/>
+					</f:facet>
+					<h:link outcome="/automotor/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemTipo" value="#{_item.tipo}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Marca"/>
+					</f:facet>
+					<h:link outcome="/automotor/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemMarca" value="#{_item.marca}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Modelo"/>
+					</f:facet>
+					<h:link outcome="/automotor/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemModelo" value="#{_item.modelo}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Anio"/>
+					</f:facet>
+					<h:link outcome="/automotor/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemAnio" value="#{_item.anio}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Patente"/>
+					</f:facet>
+					<h:link outcome="/automotor/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemPatente" value="#{_item.patente}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value="#{automotorBean}"/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>

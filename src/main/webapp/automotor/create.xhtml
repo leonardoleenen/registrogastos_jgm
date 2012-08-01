@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"	
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="id" value="#{automotorBean.id}"/>
+		<f:event type="preRenderView" listener="#{automotorBean.retrieve}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Create Automotor"/>
+
+	<ui:define name="header">
+		Automotor
+	</ui:define>
+
+	<ui:define name="subheader">
+		<c:choose>
+			<c:when test="#{!empty automotorBean.id}">
+				Edit existing Automotor
+			</c:when>
+			<c:otherwise>
+				Create a new Automotor
+			</c:otherwise>
+		</c:choose>
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="create">
+			<h:messages globalOnly="true" styleClass="error"/>
+
+			<h:panelGrid columnClasses="label,component,required" columns="3">
+				<h:outputLabel for="automotorBeanAutomotorTipo" value="Tipo:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorTipo" value="#{automotorBean.automotor.tipo}"/>
+					<h:message for="automotorBeanAutomotorTipo" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorMarca" value="Marca:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorMarca" value="#{automotorBean.automotor.marca}"/>
+					<h:message for="automotorBeanAutomotorMarca" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorModelo" value="Modelo:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorModelo" value="#{automotorBean.automotor.modelo}"/>
+					<h:message for="automotorBeanAutomotorModelo" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorAnio" value="Anio:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorAnio" value="#{automotorBean.automotor.anio}"/>
+					<h:message for="automotorBeanAutomotorAnio" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorPatente" value="Patente:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorPatente" value="#{automotorBean.automotor.patente}"/>
+					<h:message for="automotorBeanAutomotorPatente" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorTitiular" value="Titiular:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorTitiular" value="#{automotorBean.automotor.titiular}"/>
+					<h:message for="automotorBeanAutomotorTitiular" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorAgenteUsuario" value="Agente Usuario:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorAgenteUsuario" value="#{automotorBean.automotor.agenteUsuario}"/>
+					<h:message for="automotorBeanAutomotorAgenteUsuario" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorDependenciaDestinado" value="Dependencia Destinado:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorDependenciaDestinado" value="#{automotorBean.automotor.dependenciaDestinado}"/>
+					<h:message for="automotorBeanAutomotorDependenciaDestinado" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel for="automotorBeanAutomotorUsoDestinado" value="Uso Destinado:"/>
+				<h:panelGroup>
+					<h:inputText id="automotorBeanAutomotorUsoDestinado" value="#{automotorBean.automotor.usoDestinado}"/>
+					<h:message for="automotorBeanAutomotorUsoDestinado" styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+			</h:panelGrid>
+
+			<div class="buttons">
+				<h:commandLink value="Save" action="#{automotorBean.update}"/>
+				<c:choose>
+					<c:when test="#{!empty automotorBean.id}">
+						<h:link value="Cancel" outcome="view">
+							<f:param name="id" value="#{automotorBean.id}"/>
+						</h:link>
+						<h:commandLink value="Delete" action="#{automotorBean.delete}"/>
+					</c:when>
+					<c:otherwise>
+						<h:link value="Cancel" outcome="search"/>
+					</c:otherwise>
+				</c:choose>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>

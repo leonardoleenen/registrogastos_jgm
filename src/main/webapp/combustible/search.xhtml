@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value="#{combustibleBean.page}"/>
+		<f:event type="preRenderView" listener="#{combustibleBean.paginate}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Combustible entities"/>
+
+	<ui:define name="header">
+		Combustible
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Combustible entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<h:panelGroup styleClass="search">
+
+				<h:panelGrid columnClasses="label,component,required" columns="3">
+					<h:outputLabel for="combustibleBeanSearchTipoNroProcedimiento" value="Tipo Nro Procedimiento:"/>
+					<h:panelGroup>
+						<h:inputText id="combustibleBeanSearchTipoNroProcedimiento" value="#{combustibleBean.search.tipoNroProcedimiento}"/>
+						<h:message for="combustibleBeanSearchTipoNroProcedimiento" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="combustibleBeanSearchRazonSocialProveedor" value="Razon Social Proveedor:"/>
+					<h:panelGroup>
+						<h:inputText id="combustibleBeanSearchRazonSocialProveedor" value="#{combustibleBean.search.razonSocialProveedor}"/>
+						<h:message for="combustibleBeanSearchRazonSocialProveedor" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="combustibleBeanSearchCuitProveedor" value="Cuit Proveedor:"/>
+					<h:panelGroup>
+						<h:inputText id="combustibleBeanSearchCuitProveedor" value="#{combustibleBean.search.cuitProveedor}"/>
+						<h:message for="combustibleBeanSearchCuitProveedor" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="combustibleBeanSearchNroOrdenCompra" value="Nro Orden Compra:"/>
+					<h:panelGroup>
+						<h:inputText id="combustibleBeanSearchNroOrdenCompra" value="#{combustibleBean.search.nroOrdenCompra}"/>
+						<h:message for="combustibleBeanSearchNroOrdenCompra" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="combustibleBeanSearchCantLitrosPorMes" value="Cant Litros Por Mes:"/>
+					<h:panelGroup>
+						<h:inputText id="combustibleBeanSearchCantLitrosPorMes" value="#{combustibleBean.search.cantLitrosPorMes}"/>
+						<h:message for="combustibleBeanSearchCantLitrosPorMes" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+				</h:panelGrid>
+				<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Search" action="#{combustibleBean.search}"/>
+					<h:commandLink value="Create New" action="#{combustibleBean.create}"/>
+				</h:panelGroup>
+			</h:panelGroup>
+			
+			<h:dataTable id="combustibleBeanPageItems" styleClass="data-table" value="#{combustibleBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo Nro Procedimiento"/>
+					</f:facet>
+					<h:link outcome="/combustible/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemTipoNroProcedimiento" value="#{_item.tipoNroProcedimiento}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Razon Social Proveedor"/>
+					</f:facet>
+					<h:link outcome="/combustible/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemRazonSocialProveedor" value="#{_item.razonSocialProveedor}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Cuit Proveedor"/>
+					</f:facet>
+					<h:link outcome="/combustible/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemCuitProveedor" value="#{_item.cuitProveedor}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nro Orden Compra"/>
+					</f:facet>
+					<h:link outcome="/combustible/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemNroOrdenCompra" value="#{_item.nroOrdenCompra}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha Inicio Contrato"/>
+					</f:facet>
+					<h:link outcome="/combustible/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemFechaInicioContrato" value="#{_item.fechaInicioContrato}">
+							<f:convertDateTime type="date"/>
+						</h:outputText>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value="#{combustibleBean}"/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>

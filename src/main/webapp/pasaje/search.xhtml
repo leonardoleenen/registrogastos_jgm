@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/resources/scaffold/pageTemplate.xhtml">
+
+	<f:metadata>
+		<f:viewParam name="page" value="#{pasajeBean.page}"/>
+		<f:event type="preRenderView" listener="#{pasajeBean.paginate}"/>
+	</f:metadata>
+
+	<ui:param name="pageTitle" value="Search Pasaje entities"/>
+
+	<ui:define name="header">
+		Pasaje
+	</ui:define>
+
+	<ui:define name="subheader">
+		Search Pasaje entities
+	</ui:define>
+
+	<ui:define name="footer"/>
+
+	<ui:define name="main">
+		<h:form id="search">
+			<h:panelGroup styleClass="search">
+
+				<h:panelGrid columnClasses="label,component,required" columns="3">
+					<h:outputLabel for="pasajeBeanSearchCantPasajesContratadosUltimoAnio" value="Cant Pasajes Contratados Ultimo Anio:"/>
+					<h:panelGroup>
+						<h:inputText id="pasajeBeanSearchCantPasajesContratadosUltimoAnio" value="#{pasajeBean.search.cantPasajesContratadosUltimoAnio}"/>
+						<h:message for="pasajeBeanSearchCantPasajesContratadosUltimoAnio" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="pasajeBeanSearchDestinoDePasajes" value="Destino De Pasajes:"/>
+					<h:panelGroup>
+						<h:inputText id="pasajeBeanSearchDestinoDePasajes" value="#{pasajeBean.search.destinoDePasajes}"/>
+						<h:message for="pasajeBeanSearchDestinoDePasajes" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="pasajeBeanSearchEmpresaAerea" value="Empresa Aerea:"/>
+					<h:panelGroup>
+						<h:inputText id="pasajeBeanSearchEmpresaAerea" value="#{pasajeBean.search.empresaAerea}"/>
+						<h:message for="pasajeBeanSearchEmpresaAerea" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="pasajeBeanSearchAgenciaTurismo" value="Agencia Turismo:"/>
+					<h:panelGroup>
+						<h:inputText id="pasajeBeanSearchAgenciaTurismo" value="#{pasajeBean.search.agenciaTurismo}"/>
+						<h:message for="pasajeBeanSearchAgenciaTurismo" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+					<h:outputLabel for="pasajeBeanSearchMontoPasaje" value="Monto Pasaje:"/>
+					<h:panelGroup>
+						<h:inputText id="pasajeBeanSearchMontoPasaje" value="#{pasajeBean.search.montoPasaje}"/>
+						<h:message for="pasajeBeanSearchMontoPasaje" styleClass="error"/>
+					</h:panelGroup>
+					<h:outputText/>
+				</h:panelGrid>
+				<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Search" action="#{pasajeBean.search}"/>
+					<h:commandLink value="Create New" action="#{pasajeBean.create}"/>
+				</h:panelGroup>
+			</h:panelGroup>
+			
+			<h:dataTable id="pasajeBeanPageItems" styleClass="data-table" value="#{pasajeBean.pageItems}" var="_item">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Cant Pasajes Contratados Ultimo Anio"/>
+					</f:facet>
+					<h:link outcome="/pasaje/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemCantPasajesContratadosUltimoAnio" value="#{_item.cantPasajesContratadosUltimoAnio}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Empresa Aerea"/>
+					</f:facet>
+					<h:link outcome="/pasaje/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemEmpresaAerea" value="#{_item.empresaAerea}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Monto Pasaje"/>
+					</f:facet>
+					<h:link outcome="/pasaje/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemMontoPasaje" value="#{_item.montoPasaje}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo Nro Procedimiento"/>
+					</f:facet>
+					<h:link outcome="/pasaje/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemTipoNroProcedimiento" value="#{_item.tipoNroProcedimiento}"/>
+					</h:link>
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nro Orden Compra"/>
+					</f:facet>
+					<h:link outcome="/pasaje/view">
+						<f:param name="id" value="#{_item.id}"/>
+						<h:outputText id="itemNroOrdenCompra" value="#{_item.nroOrdenCompra}"/>
+					</h:link>
+				</h:column>
+			</h:dataTable>
+			<ui:include src="/resources/scaffold/paginator.xhtml">
+				<ui:param name="paginatorBean" value="#{pasajeBean}"/>
+			</ui:include>
+		</h:form>
+			
+	</ui:define>
+
+</ui:composition>
