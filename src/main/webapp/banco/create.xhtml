@@ -21,10 +21,10 @@
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test="#{!empty bancoBean.id}">
-				Edit existing Banco
+				Editar Banco Existente
 			</c:when>
 			<c:otherwise>
-				Create a new Banco
+				Crear Nuevo Banco
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -36,25 +36,26 @@
 			<h:messages globalOnly="true" styleClass="error"/>
 
 			<h:panelGrid columnClasses="label,component,required" columns="3">
+		
 				<h:outputLabel for="bancoBeanBancoDescripcion" value="Descripcion:"/>
 				<h:panelGroup>
 					<h:inputText id="bancoBeanBancoDescripcion" required="true" value="#{bancoBean.banco.descripcion}"/>
 					<h:message for="bancoBeanBancoDescripcion" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+					<h:outputText value="(*)"/>
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action="#{bancoBean.update}"/>
+				<h:commandLink value="Guardar" action="#{bancoBean.update}"/>
 				<c:choose>
 					<c:when test="#{!empty bancoBean.id}">
-						<h:link value="Cancel" outcome="view">
+						<h:link value="Cancelar" outcome="view">
 							<f:param name="id" value="#{bancoBean.id}"/>
 						</h:link>
 						<h:commandLink value="Delete" action="#{bancoBean.delete}"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search"/>
+						<h:link value="Cancelar" outcome="search"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Combustible entities
+		Buscar Combustibles
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,7 +27,7 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
+				<h:panelGrid columnClasses="label,component,required" columns="6">
 					<h:outputLabel for="combustibleBeanSearchTipoNroProcedimiento" value="Tipo Nro Procedimiento:"/>
 					<h:panelGroup>
 						<h:inputText id="combustibleBeanSearchTipoNroProcedimiento" value="#{combustibleBean.search.tipoNroProcedimiento}"/>
@@ -58,10 +58,14 @@
 						<h:message for="combustibleBeanSearchCantLitrosPorMes" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+					
+					<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{combustibleBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{combustibleBean.search}"/>
-					<h:commandLink value="Create New" action="#{combustibleBean.create}"/>
+					
+					<h:commandLink value="Crear" action="#{combustibleBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			

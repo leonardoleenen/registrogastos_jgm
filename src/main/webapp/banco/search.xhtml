@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Banco entities
+		Buscar Bancos
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,17 +27,20 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
+				<h:panelGrid columnClasses="label,component,required" columns="6">
 					<h:outputLabel for="bancoBeanSearchDescripcion" value="Descripcion:"/>
 					<h:panelGroup>
 						<h:inputText id="bancoBeanSearchDescripcion" value="#{bancoBean.search.descripcion}"/>
 						<h:message for="bancoBeanSearchDescripcion" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+					<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{bancoBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{bancoBean.search}"/>
-					<h:commandLink value="Create New" action="#{bancoBean.create}"/>
+					
+					<h:commandLink value="Crear" action="#{bancoBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			

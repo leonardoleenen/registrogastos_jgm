@@ -18,7 +18,7 @@
 	</ui:define>
 
 	<ui:define name="subheader">
-		Search Automotor entities
+		Buscar Automotor
 	</ui:define>
 
 	<ui:define name="footer"/>
@@ -27,7 +27,7 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="3">
+				<h:panelGrid columnClasses="label,component,required" columns="9">
 					<h:outputLabel for="automotorBeanSearchTipo" value="Tipo:"/>
 					<h:panelGroup>
 						<h:inputText id="automotorBeanSearchTipo" value="#{automotorBean.search.tipo}"/>
@@ -58,10 +58,13 @@
 						<h:message for="automotorBeanSearchPatente" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
+					<h:panelGroup styleClass="buttons">
+					<h:commandLink value="Buscar" action="#{automotorBean.search}"/>
+					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Search" action="#{automotorBean.search}"/>
-					<h:commandLink value="Create New" action="#{automotorBean.create}"/>
+					
+					<h:commandLink value="Crear" action="#{automotorBean.create}"/>
 				</h:panelGroup>
 			</h:panelGroup>
 			

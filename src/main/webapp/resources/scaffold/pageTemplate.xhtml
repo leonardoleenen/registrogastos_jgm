@@ -10,13 +10,13 @@
 		<h:outputStylesheet name="forge-style.css" />
 	</h:head>
 	
-	<h:body>	
+	<h:body>
+	
+		<div id="header"></div>
 		<div id="wrapper">
 	
-			<div id="navigation">
-				<h:link id="homeLink" outcome="/index.xhtml">
-					<img src="#{resource['forge-logo.png']}" alt="Forge... get hammered" border="0"/>
-				</h:link>
+			<div id="navigation" >
+				
 				<ul>
 					<li>
 						<h:link outcome="/automotor/search" value="Automotor"/>
@@ -44,11 +44,14 @@
 				<h2><ui:insert name="subheader"/></h2>
 		
 				<ui:insert name="main"/>
+				<br/>
 
-				<div id="footer">
-					Powered by <a href="http://jboss.org/forge">Forge</a>. Icons by the <a href="http://everaldo.com/crystal">Crystal Project</a>
-				</div>
-			</div>		
-		</div>		
+							</div>	
+							
+								
+		</div>
+		<div id="footer">
+					AGT  Avant Garde Technologies
+				</div>		
 	</h:body>
 </html>
