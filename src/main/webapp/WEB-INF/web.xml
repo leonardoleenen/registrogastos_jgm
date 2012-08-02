@@ -5,6 +5,10 @@
     <session-timeout>30</session-timeout>
   </session-config>
   <error-page>
+    <error-code>500</error-code>
+    <location>/faces/error.xhtml</location>
+  </error-page>
+  <error-page>
     <error-code>404</error-code>
     <location>/faces/error.xhtml</location>
   </error-page>
@@ -12,5 +16,4 @@
     <error-code>500</error-code>
     <location>/faces/error.xhtml</location>
   </error-page>
-  
 </web-app>
