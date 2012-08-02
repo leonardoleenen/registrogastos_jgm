@@ -21,10 +21,10 @@
 	<ui:define name="subheader">
 		<c:choose>
 			<c:when test="#{!empty automotorBean.id}">
-				Edit existing Automotor
+				Editar Automotor
 			</c:when>
 			<c:otherwise>
-				Create a new Automotor
+				CReara Automotor
 			</c:otherwise>
 		</c:choose>
 	</ui:define>
@@ -35,7 +35,7 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="9">
+			<h:panelGrid columnClasses="label,component,required" columns="6">
 				<h:outputLabel for="automotorBeanAutomotorTipo" value="Tipo:"/>
 				<h:panelGroup>
 					<h:inputText id="automotorBeanAutomotorTipo" value="#{automotorBean.automotor.tipo}"/>
@@ -66,10 +66,10 @@
 					<h:message for="automotorBeanAutomotorPatente" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
-				<h:outputLabel for="automotorBeanAutomotorTitiular" value="Titiular:"/>
+				<h:outputLabel for="automotorBeanAutomotorTitular" value="Titular:"/>
 				<h:panelGroup>
-					<h:inputText id="automotorBeanAutomotorTitiular" value="#{automotorBean.automotor.titiular}"/>
-					<h:message for="automotorBeanAutomotorTitiular" styleClass="error"/>
+					<h:inputText id="automotorBeanAutomotorTitular" value="#{automotorBean.automotor.titular}"/>
+					<h:message for="automotorBeanAutomotorTitular" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
 				<h:outputLabel for="automotorBeanAutomotorAgenteUsuario" value="Agente Usuario:"/>
@@ -93,16 +93,16 @@
 			</h:panelGrid>
 
 			<div class="buttons">
-				<h:commandLink value="Save" action="#{automotorBean.update}"/>
+				<h:commandLink value="Guardar" action="#{automotorBean.update}"/>
 				<c:choose>
 					<c:when test="#{!empty automotorBean.id}">
-						<h:link value="Cancel" outcome="view">
+						<h:link value="Cancelara" outcome="view">
 							<f:param name="id" value="#{automotorBean.id}"/>
 						</h:link>
-						<h:commandLink value="Delete" action="#{automotorBean.delete}"/>
+						<h:commandLink value="Eliminar" action="#{automotorBean.delete}"/>
 					</c:when>
 					<c:otherwise>
-						<h:link value="Cancel" outcome="search"/>
+						<h:link value="Cancelar" outcome="search"/>
 					</c:otherwise>
 				</c:choose>
 			</div>

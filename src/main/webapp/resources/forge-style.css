@@ -22,28 +22,14 @@
 
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	background-image: url( 'bg1.png' );
-	background-repeat: repeat;
+	background-image: url( 'background.gif' );
+	background-repeat: repeat-x;
 	color: #5b5b5b;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Geneva, Verdana,
 		Arial, sans-serif;
-	margin-top:0px;
-	font-size: 12pt;
-	margin-left: 0px;
-	margin: 0px;
-	
+	margin-top: 100px;
 }
-#header {
-	width: 100%;
-	height: 75px;
-	margin: 0 auto;
-	background: -webkit-gradient(linear, left top, left bottom, from(#273653),
-		to(#507EA8) );
-	background: -moz-linear-gradient(top, #273653, #507EA8);
-	filter: progid :     DXImageTransform.Microsoft.gradient (    
-		startColorstr =  
-		  '#273653', endColorstr =     '#507ea8' );
-}
+
 /*
  * Header/footer
  */
@@ -51,45 +37,12 @@ body {
 #wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	width:96%;
-	-webkit-border-radius: 6px ;
-  -moz-border-radius: 6px;
-  border-radius:6px;
-	text-align:left;
-overflow: hidden; 
-		-moz-box-shadow: 0 0 5px 5px #b2c5d6;
-		-webkit-box-shadow: 0 0 5px 5px #b2c5d6;
-				box-shadow: 0 0 5px 5px #b2c5d6;
-				margin-top: 30px;
-				 background-color:#ffffff;
-			
+	width: 900px;
 }
 
 h1 {
-	padding-top: 0px;
+	padding-top: 55px;
 	color: #7b1e1e;
-	border-bottom: 1px solid #E7EBED;
-	margin-bottom: 7px;
-}
-
-h2 {
-	padding-top: 0px;
-	margin-bottom: 7px;
-	font-size: 17px;
-}
-#footer {
-	width: 100%;
-	
-	margin-top: 10px;
-	padding-top: 5px;
-	float: right;
-	text-align: center;
-	font-style: normal;
-	font-size: 10px;
-}
-
-#footer a {
-	color: #5b5b5b;
 }
 
 /*
@@ -100,14 +53,13 @@ h2 {
 	float: left;
 	margin-left: 10px;
 	margin-top: 30px;
-	width: 250px;
 }
 
 #navigation ul {
 	border: 1px solid #cccccc;
 	padding: 1px;
 	border-radius: 5px;
-	text-align: left;
+	text-align: center;
 }
 
 #navigation ul li {
@@ -125,19 +77,25 @@ h2 {
 #navigation a:hover {
 	border: 1px solid #dddddd;
 	border-radius: 5px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#273653),
-		to(#507EA8) );
-	background: -moz-linear-gradient(top, #273653, #507EA8);
-	filter: progid :     DXImageTransform.Microsoft.gradient (    
-		startColorstr =  
-		  '#273653', endColorstr =     '#507ea8' );
-	color: #ffffff;
+	background-color: #eeeeee;
+	color: #5b5b5b;
 	text-decoration: none;
 }
 
-#homeLink a:hover {
-	border: none;
-	text-decoration: none;
+
+#footer {
+	width: 100%;
+	border-top: 1px solid #cccccc;
+	margin-top: 10px;
+	padding-top: 5px;
+	float: right;
+	text-align: right;
+	font-style: italic;
+	font-size: 10pt;
+}
+
+#footer a {
+	color: #5b5b5b;
 }
 
 /*
@@ -145,88 +103,52 @@ h2 {
  */
  
 #content {
-	margin-left: 20px;
-
-    float: left;
-    
-    width: 75%;
-
+	margin-left: 230px;
 }
 
-#content .search {
-	display: block;
+#content #search {
 	
+	background-image: url('search.png');
+    background-repeat: no-repeat;
+    padding-bottom: 20px;
+    padding-left: 70px;
 }
 
-#content .search .buttons {
+#content #search .buttons {
+	
 	text-align: left;
-	
+	padding-left: 25%;
 }
 
-#content table {
-	width: 100%;
-}
 #content table .label {
-	
+	width: 25%;
 	text-align: left;
 	vertical-align: top;
 	white-space: nowrap;
-	font-size: 13px;
 }
 
-#content table td{
-	font-size: 12px;
-}
-
-#content table input{width: 97%;}
 #content table .component {
-	
+	width: 75%;
 	text-align: left;
 	vertical-align: top;
-	font-size: 12px;
 }
 
 #content table .component input, #content table .component select {
 	width: 100%;	
 }
 
-#content table .component input[type="checkbox"], #content table .component .rf-cal-inp, #content table .component .rf-insl-inp, #content table .component .rf-insp-inp  {
+#content table .component .select-add {
 	width: auto;
-}
-
-#content .boolean-false {
-	display: block;
-	width: 22px;
-	height: 22px;
-	background-image: url( 'false.png' );
-}
-
-#content .boolean-true {
-	display: block;
-	width: 22px;
-	height: 22px;
-	background-image: url( 'true.png' );
-}
-
-#content .data-table .boolean-true {
-	margin: auto;
-}
-
-#content .data-table .boolean-false {
-	margin: auto;
-}
-
-#content .error {
-	color: red;
-	font-size: 9px;
 }
 
 #content table .required {
 	width: 1%;
-	
+	color: red;	
+	padding-top: 7pt;
 	padding-left: 4pt;
-	font-size: 12px;
-	
+	font-size: 20pt;
+	line-height: 8pt;
+	font-weight: bold;
 }
 
 #content .data-table {
@@ -238,25 +160,20 @@ h2 {
 #content .data-table thead th {
 	background-color: #dddddd;
 	border-bottom: 1px solid #cccccc;
-	font-size: 12px;
 }
 
-#content .data-table thead th, #content .data-table tbody td, #content .data-table tfoot td {
+#content .data-table thead th, #content .data-table tbody td {
 	text-align: left;
 	padding-left: 4px;
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
 
-#content .data-table tfoot td {
-	padding-right: 4px;
-}
-
 #content .data-table tbody tr:nth-child(2n) {
 	background-color: #eeeeee;
 }
 
-#content .data-table tbody tr:hover, #content .data-table tfoot tr:hover {
+#content .data-table tbody tr:hover {
 	background-color: #d2e8f2;
 }
 
@@ -264,84 +181,45 @@ h2 {
 	display: block;
 	color: #5b5b5b;
 	text-decoration: none;
-	font-size: 12px;
 }
 
-#content .remove-column {
+#content .data-table .remove-column {
 	width: 1%;
-	text-align: center;
 }
 
-#content .data-table .remove-button {
-	display: block;
-	width: 22px;
-	height: 22px;
-	background-image: url( 'remove.png' );
-}
-
-#content .data-table-footer {
-	width: 50%;
-	margin-left: 50%;
-	margin-top: 5px;
-}
-
-#content .data-table-footer select {
-	width: 50%;
-	height: 30px;
-	vertical-align: middle;
-	margin-right: 5px;
-}
-
-#content .data-table tfoot select {
-	line-height: 30px;
-	vertical-align: middle;
-}
-
-#content .add-button {
-	display: block;
-	width: 22px;
-	height: 22px;
-	background-image: url( 'add.png' );
+#content .data-table .remove-column a:hover {
+	background-color: #eeeeee;
 }
 
 #content a {
 	color: #5b5b5b;
 }
 
-#content tr{
-	height: 30px;
-}
 #content .buttons {
-	display: block;
-	text-align: left;
-	
-	margin-bottom: 10px;
+	text-align: center;
+	margin-top: 10px;
 }
 
-#content .button, #content .buttons a {
+#content .button {
 	margin-top: 5px;
 	margin-left: 1px;
 	margin-right: 1px;
 	margin-bottom: 5px;
-	color: #ffffff;
+	color: #5b5b5b;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	padding-left: 10px;
 	padding-right: 10px;
 	text-decoration: none;
-	
+	border-top: 1px solid #dddddd;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #bbbbbb;
+	border-bottom: 1px solid #bbbbbb;
 	border-radius: 5px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#273653),
-		to(#507EA8) );
-	background: -moz-linear-gradient(top, #273653, #507EA8);
-	filter: progid :     DXImageTransform.Microsoft.gradient (    
-		startColorstr =  
-		  '#273653', endColorstr =     '#507ea8' );
-	vertical-align: middle;
-	font-size: 11px;
+	background-color: #eeeeee;
 }
 
-#content .button:hover, #content .buttons a:hover {
+#content .button:hover {
 	background-color: #d2e8f2;
 }
 

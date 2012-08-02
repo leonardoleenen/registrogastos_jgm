@@ -42,7 +42,7 @@
 					<h:inputText id="bancoBeanBancoDescripcion" required="true" value="#{bancoBean.banco.descripcion}"/>
 					<h:message for="bancoBeanBancoDescripcion" styleClass="error"/>
 				</h:panelGroup>
-					<h:outputText value="(*)"/>
+					<h:outputText value="*"/>
 			</h:panelGrid>
 
 			<div class="buttons">
@@ -52,7 +52,7 @@
 						<h:link value="Cancelar" outcome="view">
 							<f:param name="id" value="#{bancoBean.id}"/>
 						</h:link>
-						<h:commandLink value="Delete" action="#{bancoBean.delete}"/>
+						<h:commandLink value="Eliminar" action="#{bancoBean.delete}"/>
 					</c:when>
 					<c:otherwise>
 						<h:link value="Cancelar" outcome="search"/>
