@@ -11,7 +11,7 @@ import java.lang.Override;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 import java.util.HashSet;
-import ar.com.agtech.jgm.registrogastos.modelo.Banco;
+
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import java.util.Date;
@@ -99,20 +99,7 @@ public class pagohaberes implements java.io.Serializable
       this.tiponroprocedimiento = tiponroprocedimiento;
    }
 
-   @NotNull
-   private @OneToOne(cascade = CascadeType.ALL)
-   Banco entidadBancaria;
-
-   public Banco getEntidadBancaria()
-   {
-      return this.entidadBancaria;
-   }
-
-   public void setEntidadBancaria(final Banco entidadBancaria)
-   {
-      this.entidadBancaria = entidadBancaria;
-   }
-
+  
    @NotNull
    @Column
    private String ordencompra;
@@ -181,9 +168,5 @@ public class pagohaberes implements java.io.Serializable
       return result;
    }
 
-   public void newBanco()
-   {
-      this.entidadBancaria = new Banco();
-   }
-
+   
 }

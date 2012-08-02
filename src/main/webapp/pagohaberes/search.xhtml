@@ -27,7 +27,7 @@
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
-				<h:panelGrid columnClasses="label,component,required" columns="6">
+				<h:panelGrid columnClasses="label,component,required" columns="7" rowClasses="label,component,required">
 					<h:outputLabel for="pagohaberesBeanSearchTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 					<h:panelGroup>
 						<h:inputText id="pagohaberesBeanSearchTiponroprocedimiento" value="#{pagohaberesBean.search.tiponroprocedimiento}"/>
@@ -40,13 +40,7 @@
 						<h:message for="pagohaberesBeanSearchOrdencompra" styleClass="error"/>
 					</h:panelGroup>
 					<h:outputText/>
-					<h:outputLabel for="pagohaberesBeanSearchCantperCobraHaberesPorBanco" value="Cant. Cobra Haberes Por Banco:"/>
-					<h:panelGroup>
-						<h:inputText id="pagohaberesBeanSearchCantperCobraHaberesPorBanco" value="#{pagohaberesBean.search.cantperCobraHaberesPorBanco}"/>
-						<h:message for="pagohaberesBeanSearchCantperCobraHaberesPorBanco" styleClass="error"/>
-					</h:panelGroup>
-					<h:outputText/>
-						<h:panelGroup styleClass="buttons">
+					<h:panelGroup styleClass="buttons">
 					<h:commandLink value="Buscar" action="#{pagohaberesBean.search}"/>
 					</h:panelGroup>
 				</h:panelGrid>
@@ -66,15 +60,7 @@
 						<h:outputText id="itemTiponroprocedimiento" value="#{_item.tiponroprocedimiento}"/>
 					</h:link>
 				</h:column>
-				<h:column>
-					<f:facet name="header">
-						<h:outputText value="Descripcion"/>
-					</f:facet>
-					<h:link outcome="/pagohaberes/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="itemDescripcion" value="#{_item.descripcion}"/>
-					</h:link>
-				</h:column>
+				
 				<h:column>
 					<f:facet name="header">
 						<h:outputText value="Ordencompra"/>
