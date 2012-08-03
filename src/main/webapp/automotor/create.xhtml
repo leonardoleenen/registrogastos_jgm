@@ -5,6 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"	
+	xmlns:p="http://primefaces.org/ui"
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
@@ -94,6 +95,7 @@
 
 			<div class="buttons">
 				<h:commandLink value="Guardar" action="#{automotorBean.update}"/>
+				
 				<c:choose>
 					<c:when test="#{!empty automotorBean.id}">
 						<h:link value="Cancelara" outcome="view">

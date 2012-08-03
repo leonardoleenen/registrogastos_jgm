@@ -4,14 +4,15 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
-		<f:viewParam name="page" value="#{bancoBean.page}"/>
-		<f:event type="preRenderView" listener="#{bancoBean.paginate}"/>
+		<f:viewParam name="page" value="#{bancoBean.page}" />
+		<f:event type="preRenderView" listener="#{bancoBean.paginate}" />
 	</f:metadata>
 
-	<ui:param name="pageTitle" value="Search Banco entities"/>
+	<ui:param name="pageTitle" value="Search Banco entities" />
 
 	<ui:define name="header">
 		Banco
@@ -21,45 +22,51 @@
 		Buscar Bancos
 	</ui:define>
 
-	<ui:define name="footer"/>
+	<ui:define name="footer" />
 
 	<ui:define name="main">
 		<h:form id="search">
 			<h:panelGroup styleClass="search">
 
 				<h:panelGrid columnClasses="label,component,required" columns="6">
-					<h:outputLabel for="bancoBeanSearchDescripcion" value="Descripcion:"/>
+					<h:outputLabel for="bancoBeanSearchDescripcion"
+						value="Descripcion:" />
 					<h:panelGroup>
-						<h:inputText id="bancoBeanSearchDescripcion" value="#{bancoBean.search.descripcion}"/>
-						<h:message for="bancoBeanSearchDescripcion" styleClass="error"/>
+						<h:inputText id="bancoBeanSearchDescripcion"
+							value="#{bancoBean.search.descripcion}" />
+						<h:message for="bancoBeanSearchDescripcion" styleClass="error" />
 					</h:panelGroup>
-					<h:outputText/>
+					<h:outputText />
 					<h:panelGroup styleClass="buttons">
-					<h:commandLink value="Buscar" action="#{bancoBean.search}"/>
+						<h:commandLink value="Buscar" action="#{bancoBean.search}" />
 					</h:panelGroup>
 				</h:panelGrid>
 				<h:panelGroup styleClass="buttons">
-					
-					<h:commandLink value="Crear" action="#{bancoBean.create}"/>
+
+					<h:commandLink value="Crear" action="#{bancoBean.create}" />
 				</h:panelGroup>
 			</h:panelGroup>
+
+
 			
-			<h:dataTable id="bancoBeanPageItems" styleClass="data-table" value="#{bancoBean.pageItems}" var="_item">
+		
+			<h:dataTable id="bancoBeanPageItems" styleClass="data-table"
+				value="#{bancoBean.pageItems}" var="_item">
 				<h:column>
 					<f:facet name="header">
-						<h:outputText value="Descripcion"/>
+						<h:outputText value="Descripcion" />
 					</f:facet>
 					<h:link outcome="/banco/view">
-						<f:param name="id" value="#{_item.id}"/>
-						<h:outputText id="itemDescripcion" value="#{_item.descripcion}"/>
+						<f:param name="id" value="#{_item.id}" />
+						<h:outputText id="itemDescripcion" value="#{_item.descripcion}" />
 					</h:link>
 				</h:column>
 			</h:dataTable>
 			<ui:include src="/resources/scaffold/paginator.xhtml">
-				<ui:param name="paginatorBean" value="#{bancoBean}"/>
+				<ui:param name="paginatorBean" value="#{bancoBean}" />
 			</ui:include>
 		</h:form>
-			
+
 	</ui:define>
 
 </ui:composition>
