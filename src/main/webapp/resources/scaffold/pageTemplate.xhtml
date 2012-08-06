@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 	<h:head>
 		<title>#{empty pageTitle ? '{#pageTitle}' : pageTitle}</title>
@@ -13,9 +14,9 @@
 	<h:body>
 	
 		<div id="header"></div>
-		<div id="wrapper">
+		<div id="navigation" >
+			
 	
-			<div id="navigation" >
 				
 				<ul>
 					<li>
@@ -38,6 +39,9 @@
 					</li>
 				</ul>				
 			</div>
+		<div id="wrapper">
+	
+			
 		
 			<div id="content">
 				<h1><ui:insert name="header"/></h1>		
@@ -51,7 +55,7 @@
 								
 		</div>
 		<div id="footer">
-					AGT  Avant Garde Technologies
+					AGT - Avant Garde Technologies
 				</div>		
 	</h:body>
 </html>

@@ -35,14 +35,14 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="3">
-		
-				<h:outputLabel for="bancoBeanBancoDescripcion" value="Descripcion:"/>
+			<h:panelGrid columnClasses="required,label,component," columns="3">
+		<h:outputText value="*"/>
+				<h:outputLabel for="bancoBeanBancoDescripcion" value="Descripción:"/>
 				<h:panelGroup>
 					<h:inputText id="bancoBeanBancoDescripcion" required="true" value="#{bancoBean.banco.descripcion}"/>
 					<h:message for="bancoBeanBancoDescripcion" styleClass="error"/>
 				</h:panelGroup>
-					<h:outputText value="*"/>
+					
 			</h:panelGrid>
 
 			<div class="buttons">

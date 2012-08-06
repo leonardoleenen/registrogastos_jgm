@@ -4,7 +4,8 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"	
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"	
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
@@ -35,7 +36,9 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="6">
+			<h:panelGrid columnClasses="required,label,component,required,label,component," columns="6">
+				
+				<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleTipoNroProcedimiento" value="Tipo Nro Procedimiento:"/>
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleTipoNroProcedimiento" required="true" value="#{combustibleBean.combustible.tipoNroProcedimiento}"/>
@@ -47,7 +50,8 @@
 					<h:inputText id="combustibleBeanCombustibleRazonSocialProveedor" required="true" value="#{combustibleBean.combustible.razonSocialProveedor}"/>
 					<h:message for="combustibleBeanCombustibleRazonSocialProveedor" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				
+<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleCuitProveedor" value="Cuit Proveedor:"/>
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleCuitProveedor" required="true" value="#{combustibleBean.combustible.cuitProveedor}"/>
@@ -59,41 +63,87 @@
 					<h:inputText id="combustibleBeanCombustibleNroOrdenCompra" required="true" value="#{combustibleBean.combustible.nroOrdenCompra}"/>
 					<h:message for="combustibleBeanCombustibleNroOrdenCompra" styleClass="error"/>
 				</h:panelGroup>
+				
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleFechaInicioContrato" value="Fecha Inicio Contrato:"/>
 				<h:panelGroup>
-					<h:inputText id="combustibleBeanCombustibleFechaInicioContrato" required="true" value="#{combustibleBean.combustible.fechaInicioContrato}">
-						<f:convertDateTime type="date"/>
-					</h:inputText>
+				
+<p:calendar value="#{combustibleBean.combustible.fechaInicioContrato}"
+						id="combustibleBeanCombustibleFechaInicioContrato" showOn="button"  />
+
+
+					<p:dialog header="Selected Dates" widgetVar="dialog"
+						showEffect="fade" hideEffect="fade">
+
+						<h:panelGrid id="display" columns="2" cellpadding="5">
+
+
+							<h:outputText value="Popup Button Date: " />
+							<h:outputText value="#{combustibleBean.combustible.fechaInicioContrato}"
+								id="popupButtonDate">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+
+						</h:panelGrid>
+
+					</p:dialog>
+
+					
+				
+				
+				
 					<h:message for="combustibleBeanCombustibleFechaInicioContrato" styleClass="error"/>
 				</h:panelGroup>
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleFechaFinalizacionContrato" value="Fecha Finalizacion Contrato:"/>
 				<h:panelGroup>
-					<h:inputText id="combustibleBeanCombustibleFechaFinalizacionContrato" required="true" value="#{combustibleBean.combustible.fechaFinalizacionContrato}">
-						<f:convertDateTime type="date"/>
-					</h:inputText>
+				<p:calendar value="#{combustibleBean.combustible.fechaFinalizacionContrato}"
+						id="combustibleBeanCombustibleFechaFinalizacionContrato" showOn="button"  />
+
+
+					<p:dialog header="Selected Dates" widgetVar="dialog"
+						showEffect="fade" hideEffect="fade">
+
+						<h:panelGrid id="display2" columns="2" cellpadding="5">
+
+
+							<h:outputText value="Popup Button Date: " />
+							<h:outputText value="#{combustibleBean.combustible.fechaFinalizacionContrato}"
+								id="popupButtonDate2">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+
+						</h:panelGrid>
+
+					</p:dialog>
+				
+					
 					<h:message for="combustibleBeanCombustibleFechaFinalizacionContrato" styleClass="error"/>
 				</h:panelGroup>
+				
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleCantLitrosPorMes" value="Cant Litros Por Mes:"/>
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleCantLitrosPorMes" required="true" value="#{combustibleBean.combustible.cantLitrosPorMes}"/>
 					<h:message for="combustibleBeanCombustibleCantLitrosPorMes" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				<h:outputText value=""/>
 				<h:outputLabel for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="Especificacion Tecnicas Productos Utilizados:"/>
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="#{combustibleBean.combustible.especificacionTecnicasProductosUtilizados}"/>
 					<h:message for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+				
+				<h:outputText value="*"/>
 				<h:outputLabel for="combustibleBeanCombustibleLugarCargaCombustible" value="Lugar Carga Combustible:"/>
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleLugarCargaCombustible" required="true" value="#{combustibleBean.combustible.lugarCargaCombustible}"/>
 					<h:message for="combustibleBeanCombustibleLugarCargaCombustible" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				
 			</h:panelGrid>
 
 			<div class="buttons">

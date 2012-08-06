@@ -5,6 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"	
+	xmlns:p="http://primefaces.org/ui"	
 	template="/resources/scaffold/pageTemplate.xhtml">
 
 	<f:metadata>
@@ -35,7 +36,8 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="6">
+			<h:panelGrid columnClasses="required,label,component,required,label,component," columns="6">
+				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaTiponroprocedimiento" required="true" value="#{telefoniaBean.telefonia.tiponroprocedimiento}"/>
@@ -47,19 +49,21 @@
 					<h:inputText id="telefoniaBeanTelefoniaEmpresaPrestadora" required="true" value="#{telefoniaBean.telefonia.empresaPrestadora}"/>
 					<h:message for="telefoniaBeanTelefoniaEmpresaPrestadora" styleClass="error"/>
 				</h:panelGroup>
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaMontoServicio" value="Monto Servicio:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaMontoServicio" required="true" value="#{telefoniaBean.telefonia.montoServicio}"/>
 					<h:message for="telefoniaBeanTelefoniaMontoServicio" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				<h:outputText value=""/>
 				<h:outputLabel for="telefoniaBeanTelefoniaUbicacionGeograficaDependencia" value="Ubicacion Geografica Dependencia:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaUbicacionGeograficaDependencia" value="#{telefoniaBean.telefonia.ubicacionGeograficaDependencia}"/>
 					<h:message for="telefoniaBeanTelefoniaUbicacionGeograficaDependencia" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+				
+				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaNroOrdenCompra" value="Nro Orden Compra:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaNroOrdenCompra" required="true" value="#{telefoniaBean.telefonia.nroOrdenCompra}"/>
@@ -68,17 +72,56 @@
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaFechaInicioContrato" value="Fecha Inicio Contrato:"/>
 				<h:panelGroup>
-					<h:inputText id="telefoniaBeanTelefoniaFechaInicioContrato" required="true" value="#{telefoniaBean.telefonia.fechaInicioContrato}">
-						<f:convertDateTime type="date"/>
-					</h:inputText>
+				<p:calendar value="#{telefoniaBean.telefonia.fechaInicioContrato}"
+						id="telefoniaBeanTelefoniaFechaInicioContrato" showOn="button" required="true"  />
+
+
+					<p:dialog header="Selected Dates" widgetVar="dialog"
+						showEffect="fade" hideEffect="fade" >
+
+						<h:panelGrid id="display" columns="2" cellpadding="5">
+
+
+							<h:outputText value="Popup Button Date: " />
+							<h:outputText value="#{telefoniaBean.telefonia.fechaInicioContrato}"
+								id="popupButtonDate">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+
+						</h:panelGrid>
+
+					</p:dialog>
+				
+				
 					<h:message for="telefoniaBeanTelefoniaFechaInicioContrato" styleClass="error"/>
 				</h:panelGroup>
+				
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaFechaFinalizacionContrato" value="Fecha Finalizacion Contrato:"/>
 				<h:panelGroup>
-					<h:inputText id="telefoniaBeanTelefoniaFechaFinalizacionContrato" required="true" value="#{telefoniaBean.telefonia.fechaFinalizacionContrato}">
-						<f:convertDateTime type="date"/>
-					</h:inputText>
+					<p:calendar value="#{telefoniaBean.telefonia.fechaFinalizacionContrato}"
+						id="telefoniaBeanTelefoniaFechaFinalizacionContrato" showOn="button" required="true"  />
+
+
+					<p:dialog header="Selected Dates" widgetVar="dialog"
+						showEffect="fade" hideEffect="fade" >
+
+						<h:panelGrid id="display2" columns="2" cellpadding="5">
+
+
+							<h:outputText value="Popup Button Date: " />
+							<h:outputText value="#{telefoniaBean.telefonia.fechaFinalizacionContrato}"
+								id="popupButtonDate2">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+
+						</h:panelGrid>
+
+					</p:dialog>
+				
+				
+				
 					<h:message for="telefoniaBeanTelefoniaFechaFinalizacionContrato" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value="*"/>
@@ -87,19 +130,22 @@
 					<h:inputText id="telefoniaBeanTelefoniaCantMoviles" required="true" value="#{telefoniaBean.telefonia.cantMoviles}"/>
 					<h:message for="telefoniaBeanTelefoniaCantMoviles" styleClass="error"/>
 				</h:panelGroup>
+				
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaTipoServicioContrato" value="Tipo Servicio Contrato:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaTipoServicioContrato" required="true" value="#{telefoniaBean.telefonia.tipoServicioContrato}"/>
 					<h:message for="telefoniaBeanTelefoniaTipoServicioContrato" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				<h:outputText value=""/>
 				<h:outputLabel for="telefoniaBeanTelefoniaNroLinea" value="Nro Linea:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaNroLinea" value="#{telefoniaBean.telefonia.nroLinea}"/>
 					<h:message for="telefoniaBeanTelefoniaNroLinea" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText/>
+			
+			<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaTitular" value="Titular:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaTitular" required="true" value="#{telefoniaBean.telefonia.titular}"/>
@@ -111,7 +157,8 @@
 					<h:inputText id="telefoniaBeanTelefoniaDependencia" required="true" value="#{telefoniaBean.telefonia.dependencia}"/>
 					<h:message for="telefoniaBeanTelefoniaDependencia" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value="*"/>
+				
+				<h:outputText value=""/>
 				<h:outputLabel for="telefoniaBeanTelefoniaMontoUltimaFacturacion" value="Monto Ultima Facturacion:"/>
 				<h:panelGroup>
 					<h:inputText id="telefoniaBeanTelefoniaMontoUltimaFacturacion" value="#{telefoniaBean.telefonia.montoUltimaFacturacion}"/>
