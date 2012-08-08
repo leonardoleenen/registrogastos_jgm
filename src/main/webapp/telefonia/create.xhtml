@@ -49,6 +49,13 @@
 					<h:inputText id="telefoniaBeanTelefoniaEmpresaPrestadora" required="true" value="#{telefoniaBean.telefonia.empresaPrestadora}"/>
 					<h:message for="telefoniaBeanTelefoniaEmpresaPrestadora" styleClass="error"/>
 				</h:panelGroup>
+				<h:outputText value=""/>
+				<h:outputLabel value="Cuit Empresa prestadora:"/>
+				<h:panelGroup>
+					<h:inputText />
+					
+				</h:panelGroup>
+				
 				
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaMontoServicio" value="Monto Servicio:"/>
@@ -130,7 +137,14 @@
 				<h:outputText value="*"/>
 				<h:outputLabel for="telefoniaBeanTelefoniaTipoServicioContrato" value="Tipo Servicio Contratado:"/>
 				<h:panelGroup>
-					<h:inputText id="telefoniaBeanTelefoniaTipoServicioContrato" required="true" value="#{telefoniaBean.telefonia.tipoServicioContrato}"/>
+				
+				 <p:selectOneMenu style="width:100%;" id="telefoniaBeanTelefoniaTipoServicioContrato" required="true" value="#{telefoniaBean.telefonia.tipoServicioContrato}" >  
+            <f:selectItem itemLabel="Telefonía celular móvil" itemValue="" />  
+            <f:selectItem itemLabel="Radio y/o transferencia de datos" itemValue="1" />  
+             
+        </p:selectOneMenu>  
+				
+					
 					<h:message for="telefoniaBeanTelefoniaTipoServicioContrato" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText value=""/>
@@ -197,6 +211,22 @@
 					<h:inputText />
 					
 				</h:panelGroup>
+				
+				<h:outputText value=""/>
+				<h:outputLabel value="Modalidad de contrato:"/>
+				<h:panelGroup>
+					
+					
+        <p:selectOneMenu style="width:100%;" >  
+            <f:selectItem itemLabel="Seleccione" itemValue="" />  
+            <f:selectItem itemLabel="Legitimo abono" itemValue="1" />  
+            <f:selectItem itemLabel="Reconocimiento de servicios" itemValue="2" /> 
+              <f:selectItem itemLabel="PSU" itemValue="3" />   
+            <f:selectItem itemLabel="Otro" itemValue="4" />  
+        </p:selectOneMenu>  
+					
+				</h:panelGroup>
+				
 				<h:outputText value=""/>
 				<h:outputLabel value="Forma de tenencia:"/>
 				<h:panelGroup>
