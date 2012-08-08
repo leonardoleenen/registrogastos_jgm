@@ -132,27 +132,19 @@
 					<h:inputText id="combustibleBeanCombustibleCantLitrosPorMes" required="true" value="#{combustibleBean.combustible.cantLitrosPorMes}"/>
 					<h:message for="combustibleBeanCombustibleCantLitrosPorMes" styleClass="error"/>
 				</h:panelGroup>
-				<h:outputText value=""/>
-				<h:outputLabel for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="Especificacion Tecnicas Productos Utilizados:"/>
-				<h:panelGroup>
-					<h:inputText id="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="#{combustibleBean.combustible.especificacionTecnicasProductosUtilizados}"/>
-					<h:message for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" styleClass="error"/>
-				</h:panelGroup>
-				
 				<h:outputText value="*"/>
-				<h:outputLabel for="combustibleBeanCombustibleLugarCargaCombustible" value="Lugar Carga Combustible:"/>
+				<h:outputLabel  value="Monto de contratación:"/>
 				<h:panelGroup>
-					<h:inputText id="combustibleBeanCombustibleLugarCargaCombustible" required="true" value="#{combustibleBean.combustible.lugarCargaCombustible}"/>
-					<h:message for="combustibleBeanCombustibleLugarCargaCombustible" styleClass="error"/>
+					<h:inputText/>
+					<h:message />
 				</h:panelGroup>
-				
 					<h:outputText/>
 				
 				<h:outputLabel  value="Objeto de la contratación:"/>
 					<h:panelGroup>
 					
 					
-        <p:selectOneMenu style="width:87%;"  >  
+        <p:selectOneMenu style="width:100%;"  >  
             <f:selectItem itemLabel="Seleccione" itemValue="" />  
             <f:selectItem itemLabel="Compra de combustibles" itemValue="1" />  
             <f:selectItem itemLabel="Compra de lubricantes" itemValue="2" />  
@@ -160,6 +152,37 @@
         </p:selectOneMenu>  
 					
 				</h:panelGroup>
+				
+				
+				<h:outputText value=""/>
+					<h:outputLabel  value="Modalidad utilizada:"/>
+					<h:panelGroup>
+					
+					
+        <p:selectOneMenu style="width:100%;"  >  
+            <f:selectItem itemLabel="Seleccione" itemValue="" />  
+            <f:selectItem itemLabel="legitimo abono" itemValue="1" />  
+            <f:selectItem itemLabel="PSU" itemValue="2" />  
+             <f:selectItem itemLabel="Otros" itemValue="3" />  
+             
+        </p:selectOneMenu>  
+					
+				</h:panelGroup>
+				
+				<h:outputText value="*"/>
+				<h:outputLabel for="combustibleBeanCombustibleLugarCargaCombustible" value="Lugar Carga Combustible:"/>
+				<h:panelGroup>
+					<h:inputTextarea id="combustibleBeanCombustibleLugarCargaCombustible" required="true" value="#{combustibleBean.combustible.lugarCargaCombustible}"/>
+					<h:message for="combustibleBeanCombustibleLugarCargaCombustible" styleClass="error"/>
+				</h:panelGroup>
+				
+				<h:outputText value=""/>
+				<h:outputLabel for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="Especificacion Tecnicas Productos Utilizados:"/>
+				<h:panelGroup>
+					<h:inputTextarea id="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" value="#{combustibleBean.combustible.especificacionTecnicasProductosUtilizados}"/>
+					<h:message for="combustibleBeanCombustibleEspecificacionTecnicasProductosUtilizados" styleClass="error"/>
+				</h:panelGroup>
+				
 				
 			</h:panelGrid>
 

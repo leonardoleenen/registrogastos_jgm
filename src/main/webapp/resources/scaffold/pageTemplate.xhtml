@@ -9,11 +9,16 @@
 		<title>#{empty pageTitle ? '{#pageTitle}' : pageTitle}</title>
 		<link rel="icon" href="#{resource['favicon.ico']}" />
 		<h:outputStylesheet name="Style.css" />
+	
 	</h:head>
 	
 	<h:body>
 	
-		<div id="header"></div>
+		<div id="header">
+		<h:graphicImage value="/resources/logo.jpg" />
+		<h:link  >
+						<h:graphicImage value="/resources/cerrar_sesion.png" />
+						</h:link></div>
 		<div id="navigation" >
 			
 	
@@ -22,9 +27,11 @@
 					<li>
 						<h:link outcome="/automotor/search" value="Automotor"/>
 					</li>
+					<!--  
 					<li>
 						<h:link outcome="/banco/search" value="Banco"/>
 					</li>
+					-->
 					<li>
 						<h:link outcome="/combustible/search" value="Combustible"/>
 					</li>
@@ -37,6 +44,7 @@
 					<li>
 						<h:link outcome="/telefonia/search" value="Telefonia"/>
 					</li>
+					
 				</ul>				
 			</div>
 		<div id="wrapper">

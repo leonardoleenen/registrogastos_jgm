@@ -35,10 +35,16 @@ body {
 }
 #header {
 	width: 100%;
-	height: 5px;
+	height: 74px;
 	margin: 0 auto;
+	background-color: #ffffff;
 	
 }
+
+#header a{
+	float: right; margin-right: 29px; margin-top: 34px;border:none; text-decoration:none;
+}
+#header img{ border:none;}
 /*
  * Header/footer
  */
@@ -196,6 +202,17 @@ background: none repeat scroll 0 0 #FFFFFF;
     font-size: 12px;
     font-weight: normal;}
     
+    #content table textarea{width: 85%;
+
+border-radius: 4px;
+border: 1px solid #AED0EA;
+background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 2px 2px #8F8F8F inset;
+    color: #222222;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: normal;}
+    
 .ui-datepicker-trigger{
 	padding: 2px;
 }
@@ -215,7 +232,7 @@ button{margin-top: 3px;}
 .ui-inputfield {padding:0px;}
 
 #content table .component input, #content table .component select {
-	width: 85%;	
+	width: 84%;	
 }
 
 #content table .component input[type="checkbox"], #content table .component .rf-cal-inp, #content table .component .rf-insl-inp, #content table .component .rf-insp-inp  {
@@ -265,6 +282,7 @@ button{margin-top: 3px;}
 }
 
 #content .data-table thead th {
+	background-color:#6faeca;
 	background: -webkit-gradient(linear, left top, left bottom, from(#6faeca),
 		to(#14668f) );
 	background: -moz-linear-gradient(top, #6faeca, #14668f);
@@ -379,9 +397,7 @@ button{margin-top: 3px;}
 	font-size: 11px;
 }
 
-#content .button:hover, #content .buttons a:hover {
-	background-color: #d2e8f2;
-}
+
 
 .ui-selectonemenu .ui-widget .ui-state-default .ui-corner-all .ui-helper-clearfix{
 	width: 87%;
