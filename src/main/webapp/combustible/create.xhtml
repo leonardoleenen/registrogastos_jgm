@@ -85,6 +85,8 @@
 								<f:convertDateTime pattern="dd/MM/yyyy" />
 							</h:outputText>
 
+
+
 						</h:panelGrid>
 
 					</p:dialog>
@@ -142,6 +144,21 @@
 				<h:panelGroup>
 					<h:inputText id="combustibleBeanCombustibleLugarCargaCombustible" required="true" value="#{combustibleBean.combustible.lugarCargaCombustible}"/>
 					<h:message for="combustibleBeanCombustibleLugarCargaCombustible" styleClass="error"/>
+				</h:panelGroup>
+				
+					<h:outputText/>
+				
+				<h:outputLabel  value="Objeto de la contratación:"/>
+					<h:panelGroup>
+					
+					
+        <p:selectOneMenu style="width:87%;"  >  
+            <f:selectItem itemLabel="Seleccione" itemValue="" />  
+            <f:selectItem itemLabel="Compra de combustibles" itemValue="1" />  
+            <f:selectItem itemLabel="Compra de lubricantes" itemValue="2" />  
+               
+        </p:selectOneMenu>  
+					
 				</h:panelGroup>
 				
 			</h:panelGrid>
