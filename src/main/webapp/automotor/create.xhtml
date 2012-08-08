@@ -36,7 +36,7 @@
 		<h:form id="create">
 			<h:messages globalOnly="true" styleClass="error"/>
 
-			<h:panelGrid columnClasses="label,component,required" columns="6">
+			<h:panelGrid columnClasses="label,component,required,label,component,required" columns="6">
 				<h:outputLabel for="automotorBeanAutomotorTipo" value="Tipo:"/>
 				<h:panelGroup>
 					<h:inputText id="automotorBeanAutomotorTipo" value="#{automotorBean.automotor.tipo}"/>
@@ -55,7 +55,7 @@
 					<h:message for="automotorBeanAutomotorModelo" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
-				<h:outputLabel for="automotorBeanAutomotorAnio" value="Anio:"/>
+				<h:outputLabel for="automotorBeanAutomotorAnio" value="Año:"/>
 				<h:panelGroup>
 					<h:inputText id="automotorBeanAutomotorAnio" value="#{automotorBean.automotor.anio}"/>
 					<h:message for="automotorBeanAutomotorAnio" styleClass="error"/>
@@ -91,7 +91,82 @@
 					<h:message for="automotorBeanAutomotorUsoDestinado" styleClass="error"/>
 				</h:panelGroup>
 				<h:outputText/>
+				
+				
+				
 			</h:panelGrid>
+			
+			<h2>Datos de la contratación</h2>
+				<h:panelGrid columnClasses="label,component,required,label,component,required" columns="6">
+				<h:outputLabel  value="Razon Social Proveedor:"/>
+				<h:panelGroup>
+					<h:inputText />
+					<h:message  styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel  value="Cuit Proveedor:"/>
+				<h:panelGroup>
+					<h:inputText />
+					<h:message  styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				
+				<h:outputLabel  value="Adquisición:"/>
+					<h:panelGroup>
+					
+					
+        <p:selectOneMenu style="width:87%;"  >  
+            <f:selectItem itemLabel="Seleccione" itemValue="" />  
+            <f:selectItem itemLabel="Compra" itemValue="1" />  
+            <f:selectItem itemLabel="Locación" itemValue="2" />  
+            <f:selectItem itemLabel="Locación con opcion a compra" itemValue="3" />
+             <f:selectItem itemLabel="Donación" itemValue="4" /> 
+              <f:selectItem itemLabel="otro" itemValue="5" />    
+        </p:selectOneMenu>  
+					
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel  value="Nro de orden:"/>
+				<h:panelGroup>
+					<h:inputText />
+					<h:message  styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				
+				
+				<h:outputLabel  value="Monto:"/>
+				<h:panelGroup>
+					<h:inputText />
+					<h:message  styleClass="error"/>
+				</h:panelGroup>
+				<h:outputText/>
+				<h:outputLabel  value="Fecha Finalización contrato:"/>
+				<h:panelGroup>
+					<p:calendar
+						id="FechaFinalizacion" showOn="button" required="true"  />
+
+
+					<p:dialog header="Selected Dates" widgetVar="dialog"
+						showEffect="fade" hideEffect="fade" >
+
+						<h:panelGrid id="display2" columns="2" cellpadding="5">
+
+
+							<h:outputText value="Popup Button Date: " />
+							<h:outputText 
+								id="popupButtonDate2">
+								<f:convertDateTime pattern="dd/MM/yyyy" />
+							</h:outputText>
+
+						</h:panelGrid>
+
+					</p:dialog>
+				
+				</h:panelGroup>
+				<h:outputText/>
+			
+				</h:panelGrid>
+		
 
 			<div class="buttons">
 				<h:commandLink value="Guardar" action="#{automotorBean.update}"/>

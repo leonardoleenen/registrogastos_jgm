@@ -37,6 +37,20 @@
 			<h:messages globalOnly="true" styleClass="error"/>
 
 			<h:panelGrid columnClasses="required,label,component,required,label,component," columns="6">
+			
+			<h:outputText value="*"/>
+				<h:outputLabel  value="Entidad Bancaria:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				<h:outputText value=""/>
+				<h:outputLabel  value="Nro Cuit Entidad Bancaria:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				
 				<h:outputText value="*"/>
 				<h:outputLabel for="pagohaberesBeanPagohaberesTiponroprocedimiento" value="Tipo nro procedimiento:"/>
 				<h:panelGroup>
@@ -105,7 +119,47 @@
 				</h:panelGroup>
 				
 				
-		
+					
+				
+				
+				
+			<h:outputText value="*"/>
+				<h:outputLabel  value="Costo del Servicio:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				
+				</h:panelGrid>
+				<h2>Datos de la utilización del servicio</h2>
+				<h:panelGrid columnClasses="required,label,component,required,label,component," columns="6">
+			
+				
+				<h:outputText value="*"/>
+				<h:outputLabel  value="Cant. Personal:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				
+				<h:outputText value="*"/>
+				<h:outputLabel  value="Cant. Personal en otras entidades bancarias:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				<h:outputText value="*"/>
+				<h:outputLabel  value="Cant. Pers. que cobra haberes por banco:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
+				<h:outputText value="*"/>
+				<h:outputLabel  value="Jurisdicción de pago:"/>
+				<h:panelGroup>
+					<h:inputText  required="true" />
+					
+				</h:panelGroup>
 				 
 				
 			</h:panelGrid>
